@@ -2,9 +2,8 @@ import os
 from time import sleep
 
 path = os.getcwd()
-readMe = open(path + '/read-files/README.md', 'r')
-content = readMe.read()
+content = open(path + '/read-files/README.md', 'r').readlines()
 
-for i in content.split('.'):
-    print(i + '.') if i != content.split('.')[-1] else print(i)
+for i in content[1 : -1]:
+    print(i)
     sleep(1)
